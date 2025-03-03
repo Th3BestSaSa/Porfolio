@@ -1,0 +1,228 @@
+/* Estilos generales */
+body {
+    width: 100%;
+    height: 100%;
+    text-decoration-color: #A38F85;
+    font-family: "Monaco"; /* Tipo de fuente modificado */
+    margin: 0;
+
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilos para la barra de navegación */
+.navbar-default {
+    background-color: #E7D7C9;
+    border-color: #CDC6C3;
+    padding: 10px 0;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #000;
+    padding: 10px 15px;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #000000;
+    background-color: #F0F0F0;
+}
+
+/* Estilos para las secciones */
+section {
+    padding: 100px 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.welcome-section {
+    background: #D4B2A7;
+    text-align: center;
+}
+
+.cv-section {
+    background: #E7D7C9;
+}
+
+.sobremi-section {
+    background: #CDC6C3;
+}
+
+.aficiones-section {
+    background: #A38F85;
+}
+
+.trabajos-section {
+    background: #D4B2A7;
+}
+
+/* Estilos para el contenedor de la imagen y el texto */
+.welcome-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.galeria-section {
+    background: #CDC6C3;
+}
+
+/* Estilos para la galería */
+.galeria-section {
+    background: #CDC6C3;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.galeria-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.controles-imagen {
+    margin-bottom: 20px;
+}
+
+/* Contenedor principal de las imágenes */
+#galeria {
+    display: flex;
+    justify-content: center;  /* Centra las imágenes horizontalmente */
+    align-items: center;      /* Alinea las imágenes verticalmente */
+    gap: 20px;                /* Espacio entre las imágenes */
+    flex-wrap: wrap;          /* Permite que las imágenes se acomoden en varias filas si es necesario */
+}
+
+/* Contenedor individual de cada imagen */
+.image-container {
+    width: 250px;   /* Ancho controlado para las imágenes */
+    text-align: center; /* Centra el texto debajo de la imagen */
+}
+
+/* Estilos para las imágenes */
+.image-container img {
+    width: 100%;  /* Ajusta la imagen al tamaño del contenedor */
+    height: auto;
+    border-radius: 8px;  /* Redondeo de las esquinas de las imágenes */
+}
+
+/* Estilos para las descripciones */
+.image-container p {
+    font-size: 1em;
+    margin-top: 10px;
+    color: #333;
+}
+
+
+.text-container {
+    width: 50%;
+    text-align: left;
+}
+
+/* Estilos para el nombre */
+.welcome-section h1 {
+    text-align: center;
+    font-size: 3em;
+    color: black; /* Color del texto cambiado a negro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    position: relative;
+    font-family: "Arial Black"; /* Tipo de fuente Arial Black */
+}
+
+/* Estilos para las estrellas */
+.welcome-section h1::before,
+.welcome-section h1::after {
+    content: "★";
+    color: black; /* Color de las estrellas cambiado a negro */
+    font-size: 1.5em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.welcome-section h1::before {
+    left: 0;
+}
+
+.welcome-section h1::after {
+    right: 0;
+}
+
+/* Estilos para el botón de volver arriba */
+#back2Top {
+    width: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    z-index: 999;
+    display: none;
+    cursor: pointer;
+    transform: rotate(270deg);
+    position: fixed;
+    bottom: 50px;
+    right: 0;
+    background-color: #EDE9E3;
+    color: #A38F85;
+    text-align: center;
+    font-size: 30px;
+
+}
+
+#back2Top:hover {
+    background-color: #A38F85;
+    color: #FFF;
+}
+.controles {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #e7e7e7;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Estilo botón resaltado que se aplicará con JavaScript */
+.botonActivo {
+    background-color: #4CAF50;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Tema claro para la galería - se aplicará con JavaScript */
+.tema-claro {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+#galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+/* Estilos para las imágenes con zoom */
+.zoomable:hover {
+    width: 275px;  /* Aumenta el tamaño al hacer hover */
+    height: 275px; /* Aumenta el tamaño al hacer hover */
+    transition: 0.3s ease; /* Suaviza la transición */
+}
