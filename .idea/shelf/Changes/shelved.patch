@@ -1,0 +1,96 @@
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1761058840403)
++++ b/.idea/vcs.xml	(date 1761058840403)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!doctype html>\r\n<html lang=\"en\" class=\"no-js\">\r\n<head>\r\n\r\n    <meta charset=\"utf-8\">\r\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n    <link rel=\"canonical\" href=\"https://html5-templates.com/\" />\r\n    <title>Bootstrap Template With Sticky Menu</title>\r\n    <meta name=\"description\" content=\"Simplified Bootstrap template with sticky menu\">\r\n    <link rel=\"stylesheet\" href=\"estilo/estilo.css\">\r\n    <link rel=\"stylesheet\" href=\"estilo/estilo2.css\">\r\n    <script src=\"js/script.js\"></script>\r\n\r\n\r\n</head>\r\n<body id=\"page-top\" data-spy=\"scroll\" data-target=\".navbar-fixed-top\">\r\n<nav class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\r\n    <div class=\"container\">\r\n        <div class=\"navbar-header page-scroll\">\r\n            <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-ex1-collapse\">\r\n                <span class=\"sr-only\">Toggle menu</span>\r\n                <span class=\"icon-bar\"></span>\r\n                <span class=\"icon-bar\"></span>\r\n                <span class=\"icon-bar\"></span>\r\n            </button>\r\n            <a class=\"navbar-brand page-scroll\" href=\"#page-top\">Welcome</a>\r\n        </div>\r\n\r\n        <div class=\"collapse navbar-collapse navbar-ex1-collapse\">\r\n            <ul class=\"nav navbar-nav\">\r\n                <a class=\"page-scroll\" href=\"#page-top\"></a>\r\n\r\n                <li>\r\n                    <a class=\"page-scroll\" href=\"#cv\">CV</a>\r\n                </li>\r\n                <li>\r\n                    <a class=\"page-scroll\" href=\"#sobremi\">Sobre mi</a>\r\n                </li>\r\n                <li>\r\n                    <a class=\"page-scroll\" href=\"#aficiones\">Aficiones</a>\r\n                </li>\r\n                <li>\r\n                    <a class=\"page-scroll\" href=\"#trabajos\">Trabajo</a>\r\n                </li>\r\n                <li>\r\n                    <a class=\"page-scroll\" href=\"#galeria\">Galeria</a>\r\n                </li>\r\n                <li>\r\n                    <a href=\"pdf/Currículum CV Celia Gandul Duque.pdf (1).pdf\" download=\"Mi-CV.pdf\">Descargar CV</a>\r\n                </li>\r\n            </ul>\r\n        </div>\t<!-- .navbar-collapse -->\r\n    </div>\t\t<!-- .container -->\r\n</nav>\r\n\r\n<!-- Welcome   -->\r\n<section id=\"welcome\" class=\"welcome-section\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-12\">\r\n    <div class=\"container\">\r\n        <h1>  ✩·.¸¸.·¯⍣✩   Bienvenido/a   ✩⍣¯·.¸¸.·✩  </h1>\r\n        <p>\r\n            ¡Hola! \uD83D\uDC4B Soy una estudiante de <strong>Desarrollo de Aplicaciones Multiplataforma</strong>,\r\n            y está pagina diseñada para mostrar mis trabajos, proyectos y habilidades en el mundo de la programación.\r\n        </p>\r\n        <br/>\r\n        <img  src=\"gift/518afb1d1cdc07eb7d2b1729f03fe91e.gif\" height=\"270\" width=\"500\" /></div>\r\n    </div>\r\n</section>\r\n\r\n<!-- About -->\r\n<section id=\"cv\" class=\"cv-section\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-12\">\r\n                <h1>Curriculum</h1>\r\n                <h2>Celia Gandul Duque</h2>\r\n                <div class=\"Imagen\">\r\n                    <img class=\"contenedor\" src=\"imagenes/PHOTO-2024-11-25-12-45-47-removebg-preview.png\" height=\"300\" width=\"150\"/>\r\n                </div>\r\n                <h3>Estudiante</h3>\r\n                <div class=\"section\">\r\n                    <p>Información de contacto</p>\r\n                    <ul>\r\n                        <li>Numero de telefono: 627497600</li>\r\n                        <li>Gmail: cgandulduque@gmail.com</li>\r\n                        <li>Fecha nacimiento: 14/03/2006</li>\r\n                    </ul>\r\n                </div>\r\n\r\n                <div class=\"section\">\r\n                    <h3>Estudios</h3>\r\n                    <ul>\r\n                        <li>Bachillerato (2022-2024)</li>\r\n                        <li>Prueba de acceso a la universidad (2024)</li>\r\n                        <li>Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (2024 - Actualidad)</li>\r\n                    </ul>\r\n                </div>\r\n\r\n                <div class=\"section\">\r\n                    <h3>Idiomas</h3>\r\n                    <ul>\r\n                        <li>Inglés: B1</li>\r\n                        <li>Francés: B1</li>\r\n                    </ul>\r\n                </div>\r\n\r\n                <div class=\"section\">\r\n                    <h3>Habilidades</h3>\r\n                    <ul>\r\n                        <li>Lenguajes de programación: Java, HTML</li>\r\n                        <li>IDE: Eclipse, Visual Studio, Sublime, WebStorm, MySQL Workbench</li>\r\n                        <li>Sistemas Operativos: Creación de máquinas virtuales (Linux, Windows)</li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    </div>\r\n</section>\r\n\r\n<!-- What we do Section -->\r\n<section id=\"sobremi\" class=\"sobremi-section\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-12\">\r\n                <h1>Sobre mi</h1>\r\n                <div class=\"section\">\r\n                    <p>Soy una persona extrovertida y alegre, con una gran pasión por crear un futuro donde la tecnología y el aprendizaje se unan para mejorar la vida de las personas. Disfruto trabajar en equipo, aportando mi energía y entusiasmo para lograr metas ambiciosas. Estoy convencida de que el aprendizaje continuo es clave para adaptarnos a un mundo en constante cambio, y me esfuerzo por estar al tanto de las últimas tendencias tecnológicas. Mi objetivo es contribuir de manera significativa al desarrollo de soluciones innovadoras que promuevan el bienestar tanto individual como colectivo.</p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n\r\n<!-- Contact Section -->\r\n\r\n<section id=\"aficiones\" class=\"aficiones-section\">\r\n\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-12\">\r\n                <h1>Aficiones</h1>\r\n                <ul>\r\n                    <li>Dibujar</li>\r\n                    <li>Leer</li>\r\n                    <li>Jugar videojuegos</li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n<!-- What we do Section -->\r\n<section id=\"trabajos\" class=\"trabajos-section\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-12\">\r\n                <h1>Trabajos</h1>\r\n                <a href=\"https://github.com/Th3BestSaSa/Entorno-Desarollo\">Enlace a trabajos de entorno</a>\r\n                <br>\r\n                <a href=\"https://github.com/Th3BestSaSa/Programacion-\">Enlace a trabajos de programacion</a>\r\n                <br>\r\n                <a href=\"https://wuolah.com/profile/Th3BestSASA\">Enlace a la teoria</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n\r\n<section class=\"galeria-section\">\r\n<h1 >Galería de Imágenes</h1>\r\n    <div class=\"controles\">\r\n        <button id=\"tema-claro\">Tema Claro</button>\r\n        <button id=\"tema-oscuro\">Tema Oscuro</button>\r\n        <button id=\"reset-estilos\">Restablecer</button>\r\n    </div>\r\n    <div id=\"galeria\">\r\n        <div class=\"image-container\">\r\n            <img class=\"zoomable\" src=\"imagenes/imagen1.svg\" alt=\"Imagen 1\">\r\n            <p>Descripción de la imagen 1</p>\r\n        </div>\r\n        <div class=\"image-container\">\r\n            <img class=\"zoomable\" src=\"imagenes/imagen2.svg\" alt=\"Imagen 2\">\r\n            <p>Descripción de la imagen 2</p>\r\n        </div>\r\n        <div class=\"image-container\">\r\n            <img class=\"zoomable\" src=\"imagenes/imagen3.svg\" alt=\"Imagen 3\">\r\n            <p>Descripción de la imagen 3</p>\r\n        </div>\r\n        <div class=\"image-container\">\r\n            <img class=\"zoomable\" src=\"imagenes/imagen4.svg\" alt=\"Imagen 4\">\r\n            <p>Descripción de la imagen 4</p>\r\n        </div>\r\n    </div>\r\n</section>\r\n\r\n\r\n\r\n</body>\r\n\r\n</html>\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index.html b/index.html
+--- a/index.html	(revision 457778f8b78fa1275e8954022f43a034630d30b9)
++++ b/index.html	(date 1761059039148)
+@@ -47,7 +47,7 @@
+                     <a class="page-scroll" href="#galeria">Galeria</a>
+                 </li>
+                 <li>
+-                    <a href="pdf/Currículum CV Celia Gandul Duque.pdf (1).pdf" download="Mi-CV.pdf">Descargar CV</a>
++                    <a href="pdf/Currículum CV Celia Gandul Duque.pdf.pdf" download="Mi-CV.pdf">Descargar CV</a>
+                 </li>
+             </ul>
+         </div>	<!-- .navbar-collapse -->
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1761058837937)
++++ b/.idea/.gitignore	(date 1761058837937)
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: .idea/Porfolio.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/Porfolio.iml b/.idea/Porfolio.iml
+new file mode 100644
+--- /dev/null	(date 1761058840248)
++++ b/.idea/Porfolio.iml	(date 1761058840248)
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="WEB_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$">
++      <excludeFolder url="file://$MODULE_DIR$/.tmp" />
++      <excludeFolder url="file://$MODULE_DIR$/temp" />
++      <excludeFolder url="file://$MODULE_DIR$/tmp" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1761058840308)
++++ b/.idea/modules.xml	(date 1761058840308)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/Porfolio.iml" filepath="$PROJECT_DIR$/.idea/Porfolio.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
