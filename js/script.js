@@ -1,109 +1,104 @@
-// Obtenemos referencias a los elementos del DOM
-var galeriaEl;
-var btnTemaClaro;
-var btnTemaOscuro;
-var btnReset;
-var botones;
+document.addEventListener('DOMContentLoaded', function() {
 
-// Función para aplicar el tema claro
-function aplicarTemaClaro() {
-    // Eliminamos primero cualquier estilo directo que pueda tener la galería
-    galeriaEl.removeAttribute('style');
+    // ==========================================================================
+    // 1. GESTIÓN DE TEMAS Y ESTILOS DE GALERÍA
+    // ==========================================================================
 
-    // Aplicamos la clase tema-claro
-    galeriaEl.className = 'tema-claro';
+    const galeriaContent = document.getElementById('galeria-content');
+    const temaClaroBtn = document.getElementById('tema-claro');
+    const temaOscuroBtn = document.getElementById('tema-oscuro');
+    const resetEstilosBtn = document.getElementById('reset-estilos');
+    const botonesTema = [temaClaroBtn, temaOscuroBtn, resetEstilosBtn];
 
-    // Resaltamos el botón activo
-    quitarResaltadoBotones();
-    btnTemaClaro.classList.add('botonActivo');
-}
-
-// Función para aplicar el tema oscuro
-function aplicarTemaOscuro() {
-    // Eliminamos primero cualquier clase que pueda tener la galería
-    galeriaEl.className = '';
-
-    // Aplicamos los estilos directamente
-    galeriaEl.style.backgroundColor = '#343a40';
-    galeriaEl.style.padding = '15px';
-    galeriaEl.style.border = '2px solid #dc3545';
-    galeriaEl.style.borderRadius = '15px';
-    galeriaEl.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.3)';
-    galeriaEl.style.color = '#f8f9fa';
-
-    // Mantenemos los estilos de flexbox que ya tenía la galería
-    galeriaEl.style.display = 'flex';
-    galeriaEl.style.flexWrap = 'wrap';
-    galeriaEl.style.justifyContent = 'space-around';
-    galeriaEl.style.gap = '20px';
-
-    // Resaltamos el botón activo
-    quitarResaltadoBotones();
-    btnTemaOscuro.classList.add('botonActivo');
-}
-
-// Función para restablecer los estilos originales
-function restablecerEstilos() {
-    // Eliminamos cualquier clase o estilo directo
-    galeriaEl.className = '';
-    galeriaEl.removeAttribute('style');
-
-    // Quitamos el resaltado de todos los botones
-    quitarResaltadoBotones();
-    btnReset.classList.add('botonActivo');
-
-    // Agregamos un pequeño timeout para quitar el resaltado del botón de reset después de 500ms
-    setTimeout(() => {
-        btnReset.classList.remove('botonActivo');
-    }, 500);
-}
-
-// Función para quitar el resaltado de todos los botones
-function quitarResaltadoBotones() {
-    botones.forEach(boton => {
-        boton.classList.remove('botonActivo');
-    });
-}
-
-// Función para inicializar referencias
-function inicializaReferencias() {
-    galeriaEl = document.getElementById('galeria');
-    btnTemaClaro = document.getElementById('tema-claro');
-    btnTemaOscuro = document.getElementById('tema-oscuro');
-    btnReset = document.getElementById('reset-estilos');
-    botones = document.querySelectorAll('button');
-
-    // Eventos para los botones
-    btnTemaClaro.addEventListener('click', aplicarTemaClaro);
-    btnTemaOscuro.addEventListener('click', aplicarTemaOscuro);
-    btnReset.addEventListener('click', restablecerEstilos);
-
-    // Eventos para el hover de los botones
-    botones.forEach(boton => {
-        // Al pasar el ratón por encima
-        boton.addEventListener('mouseenter', function() {
-            // Solo añadimos la clase si el botón no es el actualmente activo
-            if (!this.classList.contains('botonActivo')) {
-                this.classList.add('botonActivo');
-
-                // Guardamos el estado original para saber si debemos quitar la clase al salir
-                this.dataset.temporal = 'true';
-            }
+    /**
+     * Aplica la clase 'botonActivo' al botón seleccionado y la remueve de los demás.
+     * @param {HTMLElement} activeBtn - El botón que se debe activar.
+     */
+    function setBotonActivo(activeBtn) {
+        botonesTema.forEach(btn => {
+            btn.classList.remove('botonActivo');
         });
+        if (activeBtn) {
+            activeBtn.classList.add('botonActivo');
+        }
+    }
 
-        // Al quitar el ratón
-        boton.addEventListener('mouseleave', function() {
-            // Solo quitamos la clase si fue añadida temporalmente por el hover
-            if (this.dataset.temporal === 'true') {
-                this.classList.remove('botonActivo');
-                this.dataset.temporal = 'false';
-            }
+    // --- Lógica de Botones de Tema ---
+    temaClaroBtn.addEventListener('click', function() {
+        galeriaContent.classList.add('tema-claro');
+        galeriaContent.classList.remove('tema-oscuro');
+        setBotonActivo(this);
+    });
+
+    temaOscuroBtn.addEventListener('click', function() {
+        galeriaContent.classList.remove('tema-claro');
+        galeriaContent.classList.add('tema-oscuro');
+        setBotonActivo(this);
+    });
+
+    resetEstilosBtn.addEventListener('click', function() {
+        galeriaContent.classList.remove('tema-claro', 'tema-oscuro');
+        setBotonActivo(this);
+    });
+
+    // Establecer el botón de "Restablecer" como activo al cargar
+    setBotonActivo(resetEstilosBtn);
+
+
+    // ==========================================================================
+    // 2. FUNCIONALIDAD DEL BOTÓN VOLVER ARRIBA
+    // ==========================================================================
+
+    const backToTop = document.getElementById('back2Top');
+
+    // Muestra u oculta el botón al hacer scroll
+    window.addEventListener('scroll', function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTop.style.display = 'flex'; // Usar flex para centrar el icono verticalmente
+        } else {
+            backToTop.style.display = 'none';
+        }
+    });
+
+    // Acción de scroll suave al hacer clic en el botón
+    backToTop.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
     });
-}
 
-// Inicializamos la galería con el tema predeterminado
-window.onload = function() {
-    inicializaReferencias();
-    restablecerEstilos();
-};
+
+    // ==========================================================================
+    // 3. SCROLLSPY Y ENLACES DE NAVEGACIÓN (INTEGRACIÓN CON BOOTSTRAP)
+    // ==========================================================================
+
+    // Este script complementa el scrollspy de Bootstrap, si lo estás usando.
+    // Asegura un desplazamiento suave y resalta el enlace activo.
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top - 50 // Ajusta el offset por la navbar
+        }, 1000, 'easeInOutExpo');
+        event.preventDefault();
+    });
+
+    // Cierra el menú desplegable de Bootstrap después de hacer clic en un enlace
+    $('.navbar-collapse ul li a').click(function() {
+        $('.navbar-toggle:visible').click();
+    });
+});
+
+// Función para easing (necesaria para 'easeInOutExpo' si no usas un plugin)
+// Si ya tienes jQuery UI o un plugin de easing, puedes omitir esto.
+(function($) {
+    $.extend($.easing, {
+        easeInOutExpo: function (x, t, b, c, d) {
+            if (t==0) return b;
+            if (t==d) return b+c;
+            if ((t/=d/2) < 1) return c/2 * Math.pow(2, 10 * (t - 1)) + b;
+            return c/2 * (-Math.pow(2, -10 * --t) + 2) + b;
+        }
+    });
+})(jQuery);

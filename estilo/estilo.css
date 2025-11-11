@@ -1,228 +1,509 @@
-/* Estilos generales */
-body {
-    width: 100%;
-    height: 100%;
-    text-decoration-color: #A38F85;
-    font-family: "Monaco"; /* Tipo de fuente modificado */
-    margin: 0;
+/* ==========================================================================
+   1. VARIABLES CSS (PALETA DE COLORES Y FUENTES)
+   ========================================================================== */
+:root {
+    /* Paleta de colores */
+    --color-light-bg: #E7D7C9;   /* Fondo claro principal (CV, Nav) */
+    --color-medium-bg: #CDC6C3;  /* Fondo medio (Sobre mí, Galería) */
+    --color-dark-bg: #D4B2A7;    /* Fondo oscuro (Welcome, Trabajos) */
+    --color-accent: #A38F85;     /* Acento, Aficiones, Hover */
 
+    --color-text-dark: #333333;
+    --color-text-light: #FFFFFF;
+    --color-text-muted: #666666;
+
+    /* Fuentes */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+
+    --transition-speed: 0.3s ease-in-out;
 }
 
+/* ==========================================================================
+   2. ESTILOS BASE Y TIPOGRAFÍA
+   ========================================================================== */
 html {
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-/* Estilos para la barra de navegación */
+body {
+    font-family: var(--font-body);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    margin: 0;
+    overflow-x: hidden; /* Evita scroll horizontal indeseado */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+.lead {
+    font-size: 1.25em;
+    font-weight: 300;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover, a:focus {
+    color: var(--color-dark-bg);
+    text-decoration: underline;
+}
+
+/* Clases de utilidad */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* ==========================================================================
+   3. BARRA DE NAVEGACIÓN (NAVBAR)
+   ========================================================================== */
 .navbar-default {
-    background-color: #E7D7C9;
-    border-color: #CDC6C3;
-    padding: 10px 0;
+    background-color: var(--color-light-bg);
+    border-color: transparent;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    -webkit-transition: padding .3s;
+    -moz-transition: padding .3s;
+    transition: padding .3s;
+    padding: 15px 0;
 }
 
-.navbar-default .navbar-nav > li > a {
-    color: #000;
+.navbar-brand {
+    font-family: var(--font-heading);
+    color: var(--color-text-dark) !important;
+    font-size: 1.8em;
+    font-weight: 700;
+    height: auto;
     padding: 10px 15px;
 }
 
-.navbar-default .navbar-nav > li > a:hover {
-    color: #000000;
-    background-color: #F0F0F0;
+.navbar-brand:hover,
+.navbar-brand:focus {
+    color: var(--color-accent) !important;
 }
 
-/* Estilos para las secciones */
+.navbar-default .navbar-nav > li > a {
+    font-family: var(--font-heading);
+    color: var(--color-text-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 15px;
+    transition: var(--transition-speed);
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: var(--color-accent);
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: var(--color-text-light);
+    background-color: var(--color-accent);
+    border-radius: 4px;
+}
+
+/* Estilo para el botón de toggle en móviles */
+.navbar-default .navbar-toggle {
+    border-color: var(--color-accent);
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: var(--color-accent);
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: var(--color-light-bg);
+}
+
+/* ==========================================================================
+   4. SECCIONES GENERALES
+   ========================================================================== */
 section {
     padding: 100px 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.welcome-section {
-    background: #D4B2A7;
-    text-align: center;
-}
-
-.cv-section {
-    background: #E7D7C9;
-}
-
-.sobremi-section {
-    background: #CDC6C3;
-}
-
-.aficiones-section {
-    background: #A38F85;
-}
-
-.trabajos-section {
-    background: #D4B2A7;
-}
-
-/* Estilos para el contenedor de la imagen y el texto */
-.welcome-section .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
-.galeria-section {
-    background: #CDC6C3;
-}
-
-/* Estilos para la galería */
-.galeria-section {
-    background: #CDC6C3;
-    padding: 50px 0;
-    text-align: center;
-}
-
-.galeria-section h1 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-.controles-imagen {
-    margin-bottom: 20px;
-}
-
-/* Contenedor principal de las imágenes */
-#galeria {
-    display: flex;
-    justify-content: center;  /* Centra las imágenes horizontalmente */
-    align-items: center;      /* Alinea las imágenes verticalmente */
-    gap: 20px;                /* Espacio entre las imágenes */
-    flex-wrap: wrap;          /* Permite que las imágenes se acomoden en varias filas si es necesario */
-}
-
-/* Contenedor individual de cada imagen */
-.image-container {
-    width: 250px;   /* Ancho controlado para las imágenes */
-    text-align: center; /* Centra el texto debajo de la imagen */
-}
-
-/* Estilos para las imágenes */
-.image-container img {
-    width: 100%;  /* Ajusta la imagen al tamaño del contenedor */
-    height: auto;
-    border-radius: 8px;  /* Redondeo de las esquinas de las imágenes */
-}
-
-/* Estilos para las descripciones */
-.image-container p {
-    font-size: 1em;
-    margin-top: 10px;
-    color: #333;
-}
-
-
-.text-container {
-    width: 50%;
-    text-align: left;
-}
-
-/* Estilos para el nombre */
-.welcome-section h1 {
-    text-align: center;
+.section-title {
     font-size: 3em;
-    color: black; /* Color del texto cambiado a negro */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
     position: relative;
-    font-family: "Arial Black"; /* Tipo de fuente Arial Black */
+    padding-bottom: 15px;
 }
 
-/* Estilos para las estrellas */
-.welcome-section h1::before,
-.welcome-section h1::after {
-    content: "★";
-    color: black; /* Color de las estrellas cambiado a negro */
-    font-size: 1.5em;
+.section-title::after {
+    content: '';
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 60px;
+    background-color: var(--color-accent);
 }
 
-.welcome-section h1::before {
-    left: 0;
+/* Colores de las secciones */
+.welcome-section { background: var(--color-dark-bg); color: var(--color-text-light); }
+.cv-section { background: var(--color-light-bg); }
+.sobremi-section { background: var(--color-medium-bg); }
+.aficiones-section { background: var(--color-accent); color: var(--color-text-light); }
+.trabajos-section { background: var(--color-dark-bg); color: var(--color-text-light); }
+.galeria-section { background: var(--color-medium-bg); }
+
+/* Ajuste de color de texto para secciones oscuras */
+.welcome-section h1, .welcome-section p, .welcome-section .btn { color: var(--color-text-light); }
+.aficiones-section h2, .aficiones-section p { color: var(--color-text-light); }
+.trabajos-section h2, .trabajos-section a { color: var(--color-text-light); }
+.trabajos-section .list-group-item { background-color: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+.trabajos-section .list-group-item:hover { background-color: rgba(255,255,255,0.2); }
+.trabajos-section .list-group-item-heading,
+.trabajos-section .list-group-item-text { color: var(--color-text-light); }
+
+
+/* ==========================================================================
+   5. SECCIÓN DE BIENVENIDA (HERO)
+   ========================================================================== */
+.welcome-section {
+    position: relative;
+    padding: 150px 0; /* Más padding para que el contenido respire */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.welcome-section h1::after {
-    right: 0;
+.welcome-section .welcome-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3em, 8vw, 6em); /* Título responsive y grande */
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block; /* Para que las estrellas se posicionen respecto al texto */
+    color: var(--color-text-light);
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
 }
 
-/* Estilos para el botón de volver arriba */
-#back2Top {
-    width: 40px;
-    line-height: 40px;
-    overflow: hidden;
-    z-index: 999;
-    display: none;
-    cursor: pointer;
-    transform: rotate(270deg);
-    position: fixed;
-    bottom: 50px;
-    right: 0;
-    background-color: #EDE9E3;
-    color: #A38F85;
-    text-align: center;
-    font-size: 30px;
-
+.welcome-section .welcome-title .star {
+    font-size: 0.6em; /* Tamaño de la estrella respecto al título */
+    vertical-align: middle;
+    margin: 0 10px;
 }
 
-#back2Top:hover {
-    background-color: #A38F85;
-    color: #FFF;
+.welcome-section .lead {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    font-size: clamp(1.1em, 2.5vw, 1.5em);
+    font-weight: 400;
 }
-.controles {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+
+.welcome-section .btn-primary {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 12px 30px;
+    border-radius: 5px;
+    transition: var(--transition-speed);
+}
+
+.welcome-section .btn-primary:hover,
+.welcome-section .btn-primary:focus {
+    background-color: var(--color-dark-bg);
+    border-color: var(--color-dark-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* ==========================================================================
+   6. SECCIÓN CV
+   ========================================================================== */
+.cv-section h2.section-title::after { background-color: var(--color-accent); }
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 5px solid var(--color-dark-bg);
     margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-button {
-    padding: 8px 16px;
-    background-color: #e7e7e7;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.cv-section h3 {
+    font-size: 1.8em;
+    color: var(--color-dark-bg);
+    margin-bottom: 10px;
 }
 
-/* Estilo botón resaltado que se aplicará con JavaScript */
-.botonActivo {
-    background-color: #4CAF50;
-    color: white;
+.cv-section h4 {
+    font-size: 1.4em;
+    color: var(--color-accent);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.cv-section ul {
+    padding-left: 25px;
+}
+
+.cv-section ul li {
+    margin-bottom: 8px;
+}
+
+.contact-info li i {
+    margin-right: 10px;
+    color: var(--color-accent);
+}
+
+/* ==========================================================================
+   7. SECCIÓN TRABAJOS
+   ========================================================================== */
+.trabajos-section h2.section-title::after { background-color: var(--color-light-bg); }
+
+.list-group-item {
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: var(--transition-speed);
+}
+.trabajos-section .list-group-item {
+    background-color: rgba(255, 255, 255, 0.15); /* Fondo semitransparente para un toque moderno */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--color-text-light); /* Texto claro */
+}
+
+.trabajos-section .list-group-item:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.trabajos-section .list-group-item-heading {
+    font-family: var(--font-heading);
+    font-size: 1.6em;
+    margin-bottom: 5px;
+    color: var(--color-text-light);
+}
+
+.trabajos-section .list-group-item-text {
+    font-family: var(--font-body);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.trabajos-section .list-group-item i {
+    margin-right: 10px;
+    color: var(--color-light-bg);
+}
+
+
+/* ==========================================================================
+   8. SECCIÓN GALERÍA
+   ========================================================================== */
+.galeria-section h2.section-title::after { background-color: var(--color-accent); }
+
+.controles {
+    margin-bottom: 40px;
+}
+
+.controles .btn {
+    padding: 10px 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 50px; /* Botones redondeados */
+    margin: 5px;
+    transition: var(--transition-speed);
+}
+
+.controles .btn-default {
+    background-color: #f0f0f0;
+    border-color: #ddd;
+    color: var(--color-text-dark);
+}
+
+.controles .btn-default:hover,
+.controles .btn-default:focus {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-text-light);
+}
+
+/* Estilo botón activo */
+.controles .botonActivo {
+    background-color: var(--color-primary-medium); /* Un color de tu paleta */
+    border-color: var(--color-primary-medium);
+    color: var(--color-text-light);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transform: scale(1.05);
 }
 
-/* Tema claro para la galería - se aplicará con JavaScript */
-.tema-claro {
-    background-color: #f8f9fa;
-    padding: 15px;
-    border: 2px solid #007bff;
+#galeria-content {
+    /* Ya se usa display: flex; justify-content: center; gap: 20px; en JS */
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
+    transition: background-color var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
-#galeria {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
+.image-container {
+    padding: 15px; /* Padding para separar las imágenes en la grilla Bootstrap */
+    text-align: center;
 }
-/* Estilos para las imágenes con zoom */
-.zoomable:hover {
-    width: 275px;  /* Aumenta el tamaño al hacer hover */
-    height: 275px; /* Aumenta el tamaño al hacer hover */
-    transition: 0.3s ease; /* Suaviza la transición */
+
+.image-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid transparent; /* Borde sutil */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: var(--transition-speed);
+}
+
+.zoomable:hover img {
+    transform: scale(1.03); /* Zoom más sutil */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border-color: var(--color-accent); /* Borde al hacer hover */
+}
+
+.image-container p {
+    margin-top: 10px;
+    font-size: 0.95em;
+    color: var(--color-text-dark);
+}
+
+/* Temas de la galería (aplicados por JS) */
+.tema-claro {
+    background-color: #f8f9fa; /* Fondo muy claro */
+    border: 2px solid var(--color-light-bg);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.tema-claro .image-container p {
+    color: var(--color-text-dark);
+}
+
+.tema-oscuro {
+    background-color: #343a40; /* Fondo oscuro */
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.tema-oscuro .image-container p,
+.tema-oscuro h2.section-title {
+    color: var(--color-text-light);
+}
+
+/* ==========================================================================
+   9. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+footer {
+    background-color: #333;
+    color: #f8f8f8;
+    padding: 30px 0;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ==========================================================================
+   10. BOTÓN VOLVER ARRIBA (BACK TO TOP)
+   ========================================================================== */
+#back2Top {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    border-radius: 50%;
+    font-size: 2em;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: none; /* Oculto por defecto, JS lo mostrará */
+    z-index: 1000;
+    transition: var(--transition-speed);
+}
+
+#back2Top:hover {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* ==========================================================================
+   11. RESPONSIVE DESIGN (Media Queries)
+   ========================================================================== */
+@media (max-width: 991px) {
+    .section-title {
+        font-size: 2.5em;
+    }
+    section {
+        padding: 80px 0;
+    }
+    .cv-section .col-md-4, .cv-section .col-md-8 {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-brand {
+        font-size: 1.5em;
+    }
+    .navbar-default .navbar-nav > li > a {
+        padding: 10px 15px;
+    }
+    .welcome-section .welcome-title {
+        font-size: clamp(2.5em, 10vw, 4em);
+    }
+    .welcome-section .lead {
+        font-size: clamp(1em, 3vw, 1.2em);
+    }
+    .section-title {
+        font-size: 2em;
+    }
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+    .cv-section h3 {
+        font-size: 1.5em;
+    }
+    .cv-section h4 {
+        font-size: 1.2em;
+    }
+    .controles .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    #galeria-content .image-container {
+        padding: 10px;
+    }
+    #back2Top {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 1.5em;
+        bottom: 20px;
+        right: 20px;
+    }
 }
