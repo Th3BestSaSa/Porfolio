@@ -507,3 +507,31 @@ footer p {
         right: 20px;
     }
 }
+.social-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-btn {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.social-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.social-btn img {
+    width: 28px;
+    height: 28px;
+}
